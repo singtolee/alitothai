@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment.prod';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { PopularLinksComponent } from './popular-links/popular-links.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAt4JqhPWFqgn4Voc971zIR1nzQ9XMpKAo",
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     NavbarComponent,
     KeyWordComponent,
     JumbotronComponent,
-    EmbedWebviewComponent
+    EmbedWebviewComponent,
+    PopularLinksComponent
   ],
   imports: [
     BrowserModule,
