@@ -16,6 +16,11 @@ import { environment } from '../environments/environment.prod';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { LinksComponent } from './links/links.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAt4JqhPWFqgn4Voc971zIR1nzQ9XMpKAo",
@@ -34,10 +39,15 @@ export const firebaseConfig = {
     JumbotronComponent,
     EmbedWebviewComponent,
     LinksComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    routingComponents,
+    PageNotFoundComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpModule,
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
