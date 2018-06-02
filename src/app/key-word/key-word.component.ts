@@ -13,7 +13,7 @@ export class KeyWordComponent implements OnInit {
 
   keywords:Observable<Item[]>;
   private keywordsCollection: AngularFirestoreCollection<Item>;
-  private keyword:string='';
+  public keyword:string='';
 
   constructor(private db:AngularFirestore) {
     this.keywordsCollection = db.collection<Item>('KEY-WORDS');
