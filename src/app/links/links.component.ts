@@ -17,13 +17,21 @@ interface Link {
 })
 export class LinksComponent implements OnInit {
 
+  showSpinner:boolean = true;
+
   links: Observable<Link[]>;
   private linksCol: AngularFirestoreCollection<Link>;
 
 
   constructor(private db:AngularFirestore) {
-    this.linksCol = db.collection<Link>(`TOP-LINKS`);
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if(isMobile){
+      this.linksCol = db.collection<Link>(`MOBILE-TOP-LINKS`);
+    }else{
+      this.linksCol = db.collection<Link>(`TOP-LINKS`);
+    }
     this.links = this.linksCol.valueChanges();
+    this.links.subscribe(()=>this.showSpinner=false)
   }
 
   ngOnInit() {

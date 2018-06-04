@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -21,6 +22,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ApiBarComponent } from './api-bar/api-bar.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAt4JqhPWFqgn4Voc971zIR1nzQ9XMpKAo",
@@ -43,12 +46,15 @@ export const firebaseConfig = {
     LoginComponent,
     routingComponents,
     PageNotFoundComponent,
-    SignUpComponent
+    SignUpComponent,
+    ApiBarComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,

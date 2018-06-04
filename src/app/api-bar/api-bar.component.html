@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8">
+      <h4 class="text-center font-weight-bold p-3"><i class="fas fa-paste"></i> Paste your product Url at here</h4>
+      <input class="form-control" placeholder="Paste Url here" (paste)="callApi($event)">
+    </div>
+    <div class="col col-md-8">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+  </div>
+</div>
