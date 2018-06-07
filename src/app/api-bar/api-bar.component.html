@@ -5,7 +5,21 @@
       <input class="form-control" placeholder="Paste Url here" (paste)="callApi($event)">
     </div>
     <div class="col col-md-8">
-        <app-loading-spinner></app-loading-spinner>
+        <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+        <div *ngIf="prdData">
+          <div *ngIf="prdData.loaded">
+            <p>{{prdData.data.name}} is good</p>
+            <div *ngFor="let item of prdData.data.images">
+                <img [src]="item.image_url" width="100" height="100">
+            </div>
+            <div *ngFor="let sku of prdData.data.sku">
+              {{sku.label}}
+              <div *ngFor="let val of sku.values">
+                  {{val.image}}{{val.desc}}
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
